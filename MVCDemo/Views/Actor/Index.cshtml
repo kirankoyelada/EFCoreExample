@@ -1,0 +1,22 @@
+﻿@model IEnumerable<MVCDemo.Models.Actors>
+
+<h2>Actors</h2>
+
+<a asp-controller="Actor" asp-action="create">Create New</a>
+<table class="table-bordered">
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Age</td>
+        <td>Award Winner</td>        
+    </tr>
+    @foreach (Actors item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem=>item.Id)</td>
+            <td>@Html.DisplayFor(modelItem=>item.Name)</td>
+            <td>@Html.DisplayFor(modelItem=>item.Age)</td>
+            <td>@Html.DisplayFor(modelItem=>item.AwardWinner)</td>
+        </tr>
+    }
+</table>
